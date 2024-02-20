@@ -3,6 +3,8 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+const API_KEY = process.env.API_KEY
+
 router.get('/', (req, res) => {
   const queryText = `
     SELECT * FROM "categories"
