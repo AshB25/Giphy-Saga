@@ -1,3 +1,4 @@
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Search from '../Search/Search';
 import Favorites from '../Favorites/Favorites';
 
@@ -5,10 +6,15 @@ function App() {
   return (
     <div>
       <h1>Giphy Search!</h1>
+      <Router>
+        <Route path="/" exact>
+          <Search />
+        </Route>
 
-      <Search />
-
-      <Favorites />
+        <Route path="/favorites" exact>
+          <Favorites />
+        </Route>
+      </Router>
     </div>
   );
 }
