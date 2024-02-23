@@ -1,8 +1,7 @@
 function Search() {
-
   return (
     <div>
-      <h3>SEARCH</h3>
+      <h3>NAVIGATION</h3>
     </div>
   );
 }
