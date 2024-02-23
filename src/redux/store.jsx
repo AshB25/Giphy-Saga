@@ -1,12 +1,26 @@
+
+import logger from "redux-logger";
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
+
+const giphy = (state = [], action) => {
+    switch (action.type) {
+      case 'SET_IMAGES':
+        return action.payload;
+      default:
+        return state;
+    }
+  };
+
+const store = createStore(combineReducers({giphy}), applyMiddleware(logger));
 
 //REDUCER(redux)
 
 //SAGA
 const sagaMiddleware = createSagaMiddleware();
+
+//MAKE POST FOR GIPHY
 
 //SAGA GENERATOR FUNCTIONS
 function firstSaga(action) {
@@ -28,13 +42,8 @@ function* watcherSaga() {
   const response = yield axios.get();
 }
 
-//STORES REDUCERS
-const store = createStore(
-  combineReducers({}),
-  applyMiddleware(sagaMiddleware, logger)
-);
-
 //CORE SAGA FUNCTION GETS PASSED HERE
 sagaMiddleware.run(watcherSaga);
+
 
 export default store;
