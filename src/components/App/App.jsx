@@ -1,31 +1,27 @@
-import SearchForm from '../SearchForm/SearchForm';
-import ImageResult from '../ImageResult/ImageResult';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import Search from '../Search/Search';
-import Favorites from '../Favorites/Favorites';
-import { useDispatch, useSelector } from 'react-redux';
+import SearchForm from "../SearchForm/SearchForm";
+import ImageResult from "../ImageResult/ImageResult";
+import { HashRouter as Router, Route } from "react-router-dom";
+import Favorites from "../Favorites/Favorites";
+import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+
 
 function App() {
   const getCategory = () => {
-    dispatch({ type: 'GET_' });
+    dispatch({ type: "GET_" });
   };
 
   return (
     <div>
-      <h1>Giphy Search!</h1>
-      <SearchForm />
-      <ImageResult />
-      
       <Router>
-        <Route path="/" exact>
-          <Search />
-        </Route>
+        <h1>Giphy Search!</h1>
+        <SearchForm />
+        <ImageResult />
 
         <Route path="/favorites" exact>
           <Favorites />
         </Route>
       </Router>
-
     </div>
   );
 }

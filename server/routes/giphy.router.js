@@ -14,7 +14,7 @@ router.post('/search', (req, res) => {
   // What to do???
   axios
     .get(
-      `https://${BASE_URL_GIPHY}/?api_key=${API_KEY}&q=${searchTerm}&limit=10`
+      `https://${BASE_URL_GIPHY}/?api_key=${API_KEY}&q=${searchTerm}&limit=16`
     )
     .then((giphyResponse) => {
       console.log('SUCCESS', giphyResponse.data);
