@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
 
 // add a new favorite
 router.post('/', (req, res) => {
-  console.log('POST /favorites req.body:', req.body);
+  console.log(`POST /favorites req.body:`, req.body);
   const sqlText = `
   INSERT INTO "favorites" ("image_url", "category_id")
   VALUES ($1, $2)
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
       res.sendStatus(201);
     })
     .catch((dbErr) => {
-      console.log('Error adding favorite', dbErr);
+      console.log(`Error adding favorite`, dbErr);
       res.sendStatus(500);
     });
 });
@@ -50,7 +50,23 @@ router.put('/:id', (req, res) => {
 
 // delete a favorite
 router.delete('/:id', (req, res) => {
-  res.sendStatus(200);
+  console.log(`DELETE /favorites req.body:`, req.body);
+  const { id } = req.params;
+  const sqlText = `
+  DELETE FROM "favorites"
+  where "id" = $1;
+  `;
+  const sqlValues = [id];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(200);
+    })
+    .catch((dbErr) => {
+      console.log(`Error removing favorite`, dbErr);
+      res.sendStatus(500);
+    })
 });
 
 module.exports = router;
