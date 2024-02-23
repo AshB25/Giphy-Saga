@@ -1,5 +1,4 @@
-
-import logger from "redux-logger";
+import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
@@ -14,13 +13,10 @@ const giphy = (state = [], action) => {
     }
   };
 
-//REDUCER(redux)
-
 //SAGA
 const sagaMiddleware = createSagaMiddleware();
 
 //MAKE POST FOR GIPHY
-
 //SAGA GENERATOR FUNCTIONS
 function* searchGiphySaga(action) {
     // try catch block
@@ -41,6 +37,7 @@ function* searchGiphySaga(action) {
 function* watcherSaga() {
   //NEED YIELD
   //need type from reducer in the takeEvery string ('')
+  
   yield takeEvery('SEARCH_GIPHY', searchGiphySaga)
 }
 
@@ -48,6 +45,5 @@ const store = createStore(combineReducers({giphy}), applyMiddleware(sagaMiddlewa
 
 //CORE SAGA FUNCTION GETS PASSED HERE
 sagaMiddleware.run(watcherSaga);
-
 
 export default store;
