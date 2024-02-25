@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import ImageResult from '../ImageResult/ImageResult';
+import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 function SearchForm() {
   const dispatch = useDispatch();

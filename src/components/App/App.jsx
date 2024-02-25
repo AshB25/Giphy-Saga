@@ -3,14 +3,15 @@ import ImageResult from '../ImageResult/ImageResult';
 import Navigation from '../Navigation/Navigation';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
+import '../App/App.css'
 
 function App() {
   return (
     <div>
       <Router>
         <Route path="/" exact>
-          <Navigation />
           <h1>Giphy Search!</h1>
+          <Navigation />
           <SearchForm />
           <ImageResult />
         </Route>
