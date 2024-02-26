@@ -12,15 +12,14 @@ router.get('/', (req, res) => {
   `;
 
   pool
-    .query(sqlText)
-    .then((dbRes) => {
-      res.send(dbRes.rows);
-      res.sendStatus(200);
-    })
-    .catch((dbErr) => {
-      console.log('Error getting favorites', dbErr);
-      res.sendStatus(500);
-    });
+  .query(sqlText)
+  .then((dbRes) => {
+    res.send(dbRes.rows);
+  })
+  .catch((dbErr) => {
+    console.log('Error getting favorites', dbErr);
+    res.sendStatus(500);
+  });
 });
 
 // add a new favorite

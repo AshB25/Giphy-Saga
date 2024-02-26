@@ -11,10 +11,8 @@ function App() {
     <div>
       <Router>
         <Route path="/" exact>
-          <Navigation />
           <h1>Giphy Search!</h1>
-          <SearchForm />
-          <ImageResult />
+          <Navigation />
         </Route>
 
 
