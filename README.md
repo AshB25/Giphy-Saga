@@ -15,7 +15,7 @@ See the `database.sql` file for database setup and details. It offers some of th
 ## Development Setup Instructions
 
 - Run `npm install`.
-    - Be sure to take stock of `package.json` to see which dependencies you'll need to add.
+  - Be sure to take stock of `package.json` to see which dependencies you'll need to add.
 - Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
 - Run `npm run server` to start the server.
 - Run `npm run client` to start the client.
@@ -36,21 +36,23 @@ You will need 2 views for the base features. You should put some thought into th
 
 - Allow a user to see all of the Giphy images they have made a favorite. The actual images need to appear on the DOM.
 - Allow a user to set a category for a favorite image.
-    - Each favorite image can only have one category at a time.
-    - The category needs to be one of the categories in the database.
+  - Each favorite image can only have one category at a time.
+  - The category needs to be one of the categories in the database.
 
 ## Existing Router Files
 
 You are given two router modules on the server with "stubs" for the routes you may need.
 
 - `GET /api/categories` (complete)
-    - Returns an array of all categories from the table ordered by name.
+
+  - Returns an array of all categories from the table ordered by name.
 
 - `POST /api/favorites` (incomplete)
-    - For adding a new favorite image. You'll need to think about what is needed. Does it need a category?
+
+  - For adding a new favorite image. You'll need to think about what is needed. Does it need a category?
 
 - `PUT /api/favorites/:id` (incomplete)
-    - For setting a category on an image. It expects both a route parameter and data body. Feel free to change it as needed.
+  - For setting a category on an image. It expects both a route parameter and data body. Feel free to change it as needed.
 
 ## Stretch Features
 
@@ -58,6 +60,11 @@ You are given two router modules on the server with "stubs" for the routes you m
 1. Allow for a favorite to have **many categories** instead of just one.
 1. Implement a pagination feature for the Giphy search results.
 1. Add another view that allows a user to manage the categories:
-    - User should be able to create a new category.
-    - User should be able to edit an existing category.
-    - User should be able to delete/remove an existing category.
+   - User should be able to create a new category.
+   - User should be able to edit an existing category.
+   - User should be able to delete/remove an existing category.
+
+## TEAM NOTES:
+
+npm install react-icons --save
+import { FcLikePlaceholder } from "react-icons/fc";
