@@ -26,12 +26,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   console.log(`POST /favorites req.body:`, req.body);
   const sqlText = `
-  INSERT INTO "favorites" ("image_url", "category_id")
-  VALUES ($1, $2)
+  INSERT INTO "favorites" ("image_url", "liked", "category_id")
+  VALUES ($1, $2, $3)
   `;
-  const sqlValues = [req.body.image_url, req.body.category_id]
+  const sqlValues = [req.body.image_url, req.body.category_id];
   pool
-    .query (sqlText, sqlValues)
+    .query(sqlText, sqlValues)
     .then((dbRes) => {
       res.sendStatus(201);
     })
@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
     .catch((dbErr) => {
       console.log(`Error removing favorite`, dbErr);
       res.sendStatus(500);
-    })
+    });
 });
 
 module.exports = router;
