@@ -53,7 +53,7 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ px: '0px', borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ px: '0px', borderBottom: 1, borderColor: 'divider', backgroundColor: 'white'}}>
         <Tabs value={value} onChange={handleChange} aria-label="tabs">
           <Tab label="Search" {...a11yProps(0)} />
           <Tab label="Favorites" {...a11yProps(1)} />
