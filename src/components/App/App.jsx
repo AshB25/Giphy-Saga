@@ -12,8 +12,6 @@ function App() {
         <Route path="/" exact>
           <h1>Giphy Search!</h1>
           <Navigation />
-          <SearchForm />
-          <ImageResult />
         </Route>
 
         <Route path="/favorites" exact>
