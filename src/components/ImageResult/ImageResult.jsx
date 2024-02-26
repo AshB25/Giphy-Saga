@@ -4,12 +4,13 @@ function ImageResult() {
   const giphy = useSelector((store) => store.giphy);
 
   return (
-      <div className='img-group'>
-      <ul > 
+    <div className="img-group">
+      <ul>
         {giphy.map((giphyImage) => {
           return (
-            <span className='cardColor'>
+            <span className="cardColor">
               <img src={giphyImage.url} alt={giphyImage.alt} />
+              <button>Like</button>
             </span>
           );
         })}
