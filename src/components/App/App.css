@@ -8,4 +8,28 @@ h1 {
   width: 100%;
   margin: 0;
   padding: 15px;
+
+h1,form {
+    text-align: center;
+    font-size: 40px;
+}
+
+input, button {
+    font-size: 20px;
+    margin: 5px;
+    border: 3px solid black
+}
+
+.img-group {
+    display: flex;
+}
+
+img {
+    width: 20%;
+    height: 15%;
+    margin: 35px;
+    padding-bottom: 40px;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
 }
