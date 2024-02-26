@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
   .query(sqlText)
   .then((dbRes) => {
     res.send(dbRes.rows);
-    res.sendStatus(200);
   })
   .catch((dbErr) => {
     console.log('Error getting favorites', dbErr);
