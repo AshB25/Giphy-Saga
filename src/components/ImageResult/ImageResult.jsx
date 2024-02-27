@@ -39,7 +39,7 @@ function ImageResult() {
               <span className="cardColor">
                 <img src={giphyImage.url} alt={giphyImage.alt} />
                 <button className="like-btn" onClick={handleClick}>
-                  {isPending ? <FcLikePlaceholder /> : <FcLike />}
+                  {isPending ? <FcLikePlaceholder className='like-icon'/> : <FcLike className='like-icon'/>}
                 </button>
               </span>
             </>
