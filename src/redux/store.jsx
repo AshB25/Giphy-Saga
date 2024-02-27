@@ -13,6 +13,15 @@ const giphy = (state = [], action) => {
   }
 };
 
+const favorites = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_FAVORITES':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 //SAGA
 const sagaMiddleware = createSagaMiddleware();
 
@@ -42,7 +51,7 @@ function* watcherSaga() {
 }
 
 const store = createStore(
-  combineReducers({ giphy }),
+  combineReducers({ giphy, favorites }),
   applyMiddleware(sagaMiddleware, logger)
 );
 
