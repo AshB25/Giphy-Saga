@@ -12,22 +12,22 @@ router.get('/', (req, res) => {
   `;
 
   pool
-  .query(sqlText)
-  .then((dbRes) => {
-    res.send(dbRes.rows);
-  })
-  .catch((dbErr) => {
-    console.log('Error getting favorites', dbErr);
-    res.sendStatus(500);
-  });
+    .query(sqlText)
+    .then((dbRes) => {
+      res.send(dbRes.rows);
+    })
+    .catch((dbErr) => {
+      console.log('Error getting favorites', dbErr);
+      res.sendStatus(500);
+    });
 });
 
 // add a new favorite
 router.post('/', (req, res) => {
   console.log(`POST /favorites req.body:`, req.body);
   const sqlText = `
-  INSERT INTO "favorites" ("image_url", "liked", "category_id")
-  VALUES ($1, $2, $3)
+  INSERT INTO "favorites" ("image_url", "category_id")
+  VALUES ($1, $2)
   `;
   const sqlValues = [req.body.image_url, req.body.category_id];
   pool

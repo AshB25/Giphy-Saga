@@ -18,7 +18,7 @@ function ImageResult() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          action: liked ? TRUE : FALSE,
+          action: liked ? true : false,
         }),
       });
 
